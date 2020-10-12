@@ -2,7 +2,8 @@
 
     Private Sub GraphicsExampleForm_Click(sender As Object, e As EventArgs) Handles Me.Click
         'DrawLine()
-        DrawCircle()
+        'DrawCircle()
+        DrawRectangle()
     End Sub
 
     Sub DrawLine()
@@ -23,9 +24,12 @@
 
     Sub DrawRectangle()
         Dim g As Graphics = Me.CreateGraphics
+        Dim aBrush As New SolidBrush(Color.Red)
         Dim pen As New Pen(Color.Green)
+        g.FillRectangle(aBrush, 20, 20, 100, 100)
         g.DrawRectangle(pen, 20, 20, 100, 100)
         pen.Dispose()
+        aBrush.Dispose()
         g.Dispose()
     End Sub
 End Class
