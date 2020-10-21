@@ -32,4 +32,26 @@
         aBrush.Dispose()
         g.Dispose()
     End Sub
+
+    Sub DrawSineWave()
+        'Vi=Vp*sin(w*t+theta)+DC
+        'w=2*pi*f
+        'w=360*f
+        Dim theta As Integer = 90I
+        Dim vi As Double
+        Dim vp As Integer = 100
+        Dim oldVi As Double = Me.Height / 2
+        Dim oldTheta As Integer
+
+        For theta = 0 To 360 Step 1
+
+            vi = vp * Sin((PI / 180) + theta)
+            Console.WriteLine(vi)
+
+            DrawLine(theta, oldTheta, CInt(vi), CInt(oldVi))
+            oldTheta = theta
+            oldVi = vi
+
+        Next
+    End Sub
 End Class
